@@ -36,8 +36,8 @@ public class Drivetrain extends Subsystem {
   private DifferentialDrive drive = new DifferentialDrive(left, right);
 
   // Drive-related sensors
-  private Encoder leftEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
-  private Encoder rightEncoder = new Encoder(2, 3, false, Encoder.EncodingType.k4X);
+  private Encoder leftEncoder = new Encoder(2, 1, false, Encoder.EncodingType.k4X);
+  private Encoder rightEncoder = new Encoder(3, 0, false, Encoder.EncodingType.k4X);
 
   private ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
@@ -72,6 +72,10 @@ public class Drivetrain extends Subsystem {
   }
 
   public void arcade(double xSpeed, double zRotation) {
+    System.out.println("This is left encoder value:" + leftEncoder.getRaw());
+    System.out.println("This is right encoder value:" + rightEncoder.getRaw());
+    //System.out.println("This is total distance travelled (left):" + leftEncoder.getDistance());
+    //System.out.println("This is total distance travelled (right):" + rightEncoder.getDistance());
     drive.arcadeDrive(xSpeed, zRotation);
   }
 
