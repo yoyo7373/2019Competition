@@ -24,7 +24,7 @@ public class SmartDash extends Command {
   @Override
   protected void execute() {
     SmartDashboard.putNumber("Right Drive Train Encoder", Robot.drivetrain.getRightEncoder());
-    SmartDashboard.putNumber("Left Drive Train Encoder", Robot.drivetrain.getLeftEncoder(););
+    SmartDashboard.putNumber("Left Drive Train Encoder", Robot.drivetrain.getLeftEncoder());
   }
 
   // Make this return true when this Command no longer needs to run execute()
