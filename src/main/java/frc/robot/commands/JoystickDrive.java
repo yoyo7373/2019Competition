@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 public class JoystickDrive extends Command {
@@ -26,6 +27,9 @@ public class JoystickDrive extends Command {
   protected void execute() {
     double y = -1 * Robot.joystick.getY();
     double z = Robot.joystick.getZ();
+
+    SmartDashboard.putData("Right Drive Train Encoder", Robot.drivetrain.getRightEncoder());
+    SmartDashboard.putData("Left Drive Train Encoder", Robot.drivetrain.getLeftEncoder());
     
     Robot.drivetrain.arcade(y * 0.75, z * 0.5);
   }

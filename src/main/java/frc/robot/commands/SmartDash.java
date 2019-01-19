@@ -6,8 +6,10 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
-import edu.wpi.first.wpilibj.*;
+
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.Robot;
 
 public class SmartDash extends Command {
   public SmartDash() {
@@ -23,8 +25,8 @@ public class SmartDash extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    SmartDashboard.putNumber("Right Drive Train Encoder", Robot.drivetrain.getRightEncoder());
-    SmartDashboard.putNumber("Left Drive Train Encoder", Robot.drivetrain.getLeftEncoder());
+    SmartDashboard.putData("Right Drive Train Encoder", Robot.drivetrain.getRightEncoder());
+    SmartDashboard.putData("Left Drive Train Encoder", Robot.drivetrain.getLeftEncoder());
   }
 
   // Make this return true when this Command no longer needs to run execute()
