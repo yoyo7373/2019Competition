@@ -28,9 +28,9 @@ public class JoystickDrive extends Command {
     double y = -1 * Robot.joystick.getY();
     double z = Robot.joystick.getZ();
 
-    SmartDashboard.putData("Right Drive Train Encoder", Robot.drivetrain.getRightEncoder());
-    SmartDashboard.putData("Left Drive Train Encoder", Robot.drivetrain.getLeftEncoder());
-    
+    SmartDashboard.putData("Right Train Encoder", Robot.drivetrain.getRightEncoder());
+    SmartDashboard.putData("Left Train Encoder", Robot.drivetrain.getLeftEncoder());
+    SmartDashboard.putData("Gyroscope", Robot.drivetrain.getGyro());
     Robot.drivetrain.arcade(y * 0.75, z * 0.5);
   }
 
